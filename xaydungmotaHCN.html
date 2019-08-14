@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas><br/>
+<script>
+    let Rectangle = function (height, width) {
+        this.height = height;
+        this.width = width;
+        this.getArea = function () {
+            return this.height * this.width;
+        }
+        this.getPerimeter = function () {
+            return (this.height + this.width)*2;
+        }
+        this.setHeight = function (height) {
+           this.height = height;
+        }
+        this.setWidth = function (Width) {
+            this.width = Width;
+        }
+        this.canvas= function (height, width) {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#000000";
+            ctx.fillRect(0,0,height,width);
+        }
+    }
+
+    let hcn = new Rectangle(30,15);
+   hcn.canvas(100,50);
+   hcn.setHeight(46);
+   hcn.setWidth(16);
+   document.write("Rectangular area is: "+ hcn.getArea()+'<br/>');
+   document.write("The circumference of the rectangle is: " + hcn.getPerimeter())
+
+
+</script>
+</body>
+</html>
